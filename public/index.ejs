@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<head>
+    <meta charset="UTF-8">
+
+    <title>File manager</title>
+</head>
+<body>
+<div class="file_action">
+<h2>Upload File</h2>
+<form action="/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" name="avatar"> <button>Submit</button>
+</form>
+</div>
+
+
+
+<div class="file_action">
+    <h2>Latest File</h2>
+    <p><strong>File name: </strong><%= latestfile %></p>
+    <p><strong>File date: </strong><%= latesttime %></p>
+</div>
+
+<div class="file_action">
+    <h2>Replace on File</h2>
+    <form action="/replace_file" method="POST" enctype="multipart/form-data">
+        <p><span class="field-title">Initial content: </span>
+        <input type="text" name="textOld">
+        </p>
+        <p><span class="field-title">New content: </span>
+        <input type="text" name="textNew">
+        </p>
+        <p><span class="field-title">File name: </span>
+        <input type="text" name="textFile">
+        </p>
+        <button>Submit</button>
+    </form>
+</div>
+
+
+<div class="file_action">
+    <h2>Delete File</h2>
+    <form action="/delete_file" method="POST" enctype="multipart/form-data">
+        <input type="text" name="textRemove"> <button>Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
